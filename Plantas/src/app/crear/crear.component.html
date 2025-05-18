@@ -1,0 +1,35 @@
+<h2>Añade una nueva planta</h2>
+
+<form (ngSubmit)="enviarFormulario(formulario)" #formulario="ngForm" novalidate>
+  <div class="form-id">
+    <label for="id">ID: </label>
+    <input type="number" id="id" name="id" class="input" [(ngModel)]="planta.id" #id="ngModel" required [min]="maxId">
+    <div *ngIf="id.invalid && id.touched" class="error-form">
+      <span *ngIf="id.errors?.['required']">El ID es obligatorio</span>
+      <span *ngIf="id.errors?.['min']">El ID debe ser mayor que {{maxId}}</span>
+    </div>
+  </div>
+
+  <div class="form-comun">
+    <label for="comun">Nombre común: </label>
+    <input type="text" id="comun" name="comun" class="input" [(ngModel)]="planta.nombreComun" #comun="ngModel" required>
+    <div *ngIf="comun.invalid && comun.touched" class="error-form">
+      <span>El nombre común es obligatorio</span>
+    </div>
+  </div>
+
+  <div class="form-cientifico">
+    <label for="cientifico">Nombre cientifico: </label>
+    <input type="text" id="cientifico" name="cientifico" class="input" [(ngModel)]="planta.nombreCientifico" #cientifico="ngModel" required>
+    <div *ngIf="cientifico.invalid && cientifico.touched" class="error-form">
+      <span>El nombre común es obligatorio</span>
+    </div>
+  </div>
+
+  <div class="form-imgUrl">
+    <label for="imgUrl">URL de la imágen (opcional): </label>
+    <input type="text" id="imgUrl" name="imgUrl" class="input" [(ngModel)]="planta.imagenUrl" #imgUrl="ngModel">
+  </div>
+
+  <button type="submit" [disabled]="formulario.invalid">Enviar</button>
+</form>
