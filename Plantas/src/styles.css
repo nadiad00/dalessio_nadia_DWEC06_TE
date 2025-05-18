@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Gravitas+One&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+html {
+  font-size: 1px;
+}
+
+body {
+  font-family: 'Red Hat Display';
+  font-size: 16rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.3;
+  color: #f6f7cf;
+  background-color: #607c3c;
+  padding: 5px 20px;
+}
+
+h1 {
+  font-family: 'Gravitas One';
+  font-size: 50rem;
+  letter-spacing: 4px;
+  text-align: center;
+}

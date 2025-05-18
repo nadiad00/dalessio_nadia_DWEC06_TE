@@ -1,0 +1,74 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  font-size: 30rem;
+}
+
+form, .identificado {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ececa3;
+  color: #5b3108;
+  font-size: 18rem;
+  padding: 30rem;
+  border-radius: 30rem;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-campo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-weight: bold;
+  padding-bottom: 20rem;
+}
+
+.form-campo input {
+  font-family: 'Red Hat Display';
+  border: none;
+  border-radius: 10rem;
+  box-shadow: inset 3px 3px 8px 2px rgba(0, 0, 0, 0.15);
+  padding: 8rem;
+}
+
+span {
+  margin-top: 20rem;
+  color: rgb(185, 33, 33);
+  font-size: 15rem;
+  font-style: italic;
+}
+
+form button {
+  font-family: 'Red Hat Display';
+  color: #f6f7cf;
+  border: none;
+  border-radius: 15rem;
+  background-color: #abc32f;
+  box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.15);
+  padding: 10rem 50rem;
+  font-size: 16rem;
+  transition: 0.5s;
+}
+
+form button:hover {
+  transform: scale(1.05);
+}
+
+.identificado button {
+  font-family: 'Red Hat Display';
+  color: #f6f7cf;
+  border: none;
+  border-radius: 15rem;
+  background-color: #abc32f;
+  box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.15);
+  padding: 10rem 50rem;
+  font-size: 16rem;
+  transition: 0.5s;
+}

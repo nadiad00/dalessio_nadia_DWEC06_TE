@@ -1,33 +1,37 @@
-<h2>Lista de plantas</h2>
+<main>
+  <h2>Lista de plantas</h2>
 
-<div class="busqueda-container">
-  <input type="text" [(ngModel)]="busqueda" placeholder="Buscar por nombre">
-  <button (click)="busquedaCambiar()">Buscar</button>
-</div>
-
-<div class="filtro-container">
-  <label for="filtro" class="filtro-label">Filtrar por: </label>
-  <select name="filtro" id="filtro" [(ngModel)]="filtroSeleccionado" (change)="filtroCambiar()"> <!-- Al cambiar el valor del select se dispara la función filtoCambiar()-->
-    <option value="">Todas</option>
-    <option value="poisonous">Venenosas</option>
-    <option value="edible">Comestibles</option>
-    <option value="indoor">De Interior</option>
-  </select>
-</div>
-
-<div *ngFor="let planta of plantas" class="planta-container">
-  <div class="tarjeta-planta">
-    <img [src]="planta.imagenUrl" alt="Foto de {{planta.nombreComun}}">
-    <div class="titulo-planta-container">
-      <h3 class="id-planta">{{planta.id}}</h3>
-      <h3 class="comun-planta">{{planta.nombreComun}}</h3>
+  <div class="busqueda-filtros">
+    <div class="busqueda-container">
+      <input type="text" [(ngModel)]="busqueda" placeholder="Buscar por nombre">
+      <button (click)="busquedaCambiar()">Buscar</button>
     </div>
-    <h4 class="cientifico-planta">{{planta.nombreCientifico}}</h4>
-  </div>
-</div>
 
-<div class="navegacion-paginas">
-  <button (click)="paginaAnterior()" [disabled]="paginaActual === 1">Anterior</button>
-  <span class="num-pagina">Página {{paginaActual}}</span>
-  <button (click)="paginaSiguiente()">Siguiente</button>
-</div>
+    <div class="filtro-container">
+      <label for="filtro" class="filtro-label">Filtrar por: </label>
+      <select name="filtro" id="filtro" [(ngModel)]="filtroSeleccionado" (change)="filtroCambiar()"> <!-- Al cambiar el valor del select se dispara la función filtoCambiar()-->
+        <option value="">Todas</option>
+        <option value="poisonous">Venenosas</option>
+        <option value="edible">Comestibles</option>
+        <option value="indoor">De Interior</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="planta-container">
+    <div *ngFor="let planta of plantas" class="tarjeta-planta">
+      <img [src]="planta.imagenUrl" alt="Foto de {{planta.nombreComun}}">
+      <div class="titulo-planta-container">
+        <h4 class="id-planta">{{planta.id}}. </h4>
+        <h4 class="comun-planta">{{planta.nombreComun}}</h4>
+      </div>
+      <p class="cientifico-planta">{{planta.nombreCientifico}}</p>
+    </div>
+  </div>
+
+  <div class="navegacion-paginas">
+    <button (click)="paginaAnterior()" [disabled]="paginaActual === 1">Anterior</button>
+    <span class="num-pagina">Página {{paginaActual}}</span>
+    <button (click)="paginaSiguiente()">Siguiente</button>
+  </div>
+</main>

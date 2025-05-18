@@ -21,6 +21,8 @@ export class PlantasService {
     //Si ha sidos seleccionado un filtro le añade su valor a la url de la petición
     if(filtro) {
       this.speciesUrl += `&${filtro}=1`;
+    } else {
+      this.speciesUrl = `https://perenual.com/api/species-list${this.apiKey}`;
     }
 
     //Si se está buscando algo le añade su valor a la url de la petición
@@ -67,6 +69,13 @@ export class PlantasService {
   //Método para hacer una petición DELETE
   borrarPlanta(id : number) : Observable<any> {
     return this.http.delete(`${this.mockUrl}/borrar`);
+  }
+
+  //Método para obtener plantas sólo según el filtro (para el gráfico)
+  obtenerPlantasPorFiltro(filtro : string) : Observable<any>{
+    return this.http.get<any>(`${this.speciesUrl}&${filtro}=1`).pipe(
+      map(response => response.data)
+    );
   }
 
 }

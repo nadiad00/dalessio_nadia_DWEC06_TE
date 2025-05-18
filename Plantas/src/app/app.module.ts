@@ -17,7 +17,7 @@ import { ModificarComponent } from './modificar/modificar.component';
     InicioComponent,
     LoginComponent,
     CrearComponent,
-    ModificarComponent
+    ModificarComponent,
   ],
   imports: [
     BrowserModule,

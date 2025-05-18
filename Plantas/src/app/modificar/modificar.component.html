@@ -1,27 +1,36 @@
-<h2>Modificar o Borrar una planta</h2>
+<main>
+  <h2>Modificar o Borrar una planta</h2>
 
-<form (ngSubmit)="buscarPlanta()">
-  <label for="id">ID de la planta: </label>
-  <input type="number" [(ngModel)]="planta.id" name="id" id="id" required>
-  <button type="submit">Buscar</button>
-</form>
+  <article>
+    <div>
+      <form (ngSubmit)="buscarPlanta()">
+        <div class="form-campo otro-campo">
+          <label for="id">ID de la planta: </label>
+          <input type="number" [(ngModel)]="planta.id" name="id" id="id" required>
+        </div>
+          <button type="submit">Buscar</button>
+      </form>
+    </div>
 
-<div *ngIf="plantaCargada">
-  <form (ngSubmit)="modificarPlanta()">
-    <div class="form-comun">
-      <label for="comun">Nombre común: </label>
-      <input type="text" [(ngModel)]="planta.nombreComun" name="comun" id="comun" placeholder="{{planta.nombreComun}}">
+    <div *ngIf="plantaCargada">
+      <form>
+        <div class="form-campo">
+          <label for="comun">Nombre común: </label>
+          <input type="text" [(ngModel)]="planta.nombreComun" name="comun" id="comun" placeholder="{{planta.nombreComun}}">
+        </div>
+        <div class="form-campo">
+          <label for="cientifico">Nombre científico: </label>
+          <input type="text" [(ngModel)]="planta.nombreCientifico" name="cientifico" id="cientifico">
+        </div>
+        <div class="form-campo">
+          <label for="imgURL">URL de la imagen: </label>
+          <input type="text" [(ngModel)]="planta.imagenUrl" name="imgURL" id="imgURL">
+        </div>
+        <div class="botones">
+          <button (click)="modificarPlanta()">Modificar</button>
+          <button (click)="borrarPlanta()">Borrar</button>
+        </div>
+      </form>
     </div>
-    <div class="form-cientifico">
-      <label for="cientifico">Nombre científico: </label>
-      <input type="text" [(ngModel)]="planta.nombreCientifico" name="cientifico" id="cientifico">
-    </div>
-    <div class="form-imgURL">
-      <label for="imgURL">URL de la imagen: </label>
-      <input type="text" [(ngModel)]="planta.imagenUrl" name="imgURL" id="imgURL">
-    </div>
-    <button type="submit">Modificar</button>
-  </form>
-
-  <button (click)="borrarPlanta()">Borrar</button>
-</div>
+  </article>
+</main>

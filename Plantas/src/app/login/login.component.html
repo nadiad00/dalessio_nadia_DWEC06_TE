@@ -1,21 +1,29 @@
-<h2>Iniciar Sesión</h2>
+<main>
+  <h2>Iniciar Sesión</h2>
 
-<div *ngIf = "autenticado; then identificado else noIdentificado">
+  <div *ngIf = "autenticado; then identificado else noIdentificado">
 
-</div>
+  </div>
 
-<ng-template #identificado>
-  <h3>Ya estás identificado.</h3>
-  <button (click)="logout()">Logout</button>
-</ng-template>
+  <ng-template #identificado>
+    <div class="identificado">
+      <h3>Ya estás identificado.</h3>
+      <button (click)="logout()">Logout</button>
+    </div>
+  </ng-template>
 
-<ng-template #noIdentificado>
-  <form (ngSubmit)="login()">
-    <label for="usuario">Usuario: </label>
-    <input type="text" [(ngModel)]="this.username" id="usuario" name="username" required/>
-    <label for="password">Contraseña: </label>
-    <input type="text" [(ngModel)]="this.password" id="contrasena" name="password" required/>
-    <button type="submit">Entrar</button>
-    <h4 *ngIf="error">{{error}}</h4>
-  </form>
-</ng-template>
+  <ng-template #noIdentificado>
+    <form (ngSubmit)="login()">
+      <div class="form-campo">
+        <label for="usuario">Usuario: </label>
+        <input type="text" [(ngModel)]="this.username" id="usuario" name="username" required/>
+      </div>
+      <div class="form-campo">
+        <label for="password">Contraseña: </label>
+        <input type="text" [(ngModel)]="this.password" id="contrasena" name="password" required/>
+      </div>
+      <button type="submit">Entrar</button>
+      <span *ngIf="error">{{error}}</span>
+    </form>
+  </ng-template>
+</main>
